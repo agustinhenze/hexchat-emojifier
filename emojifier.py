@@ -28,7 +28,7 @@ def autocomplete(avoid_infinite_loop=False):
         hexchat.command("settext %s" % replaced)
         return hexchat.EAT_ALL
     last_msg = msg.split(':')
-    if not last_msg[-1]:
+    if len(last_msg) == 1 or not last_msg[-1]:
         return
     emoji_search = ':' + last_msg[-1]
     emoji_autocompletion = []
